@@ -1,11 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import Game from './components/Game';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
-import './styl/aula11.css';
+import './css/aula11.css';
+
+import Jogo from './components/Jogo';
 
 const renderApp = (NewRoot) => {
   render(
@@ -16,11 +17,11 @@ const renderApp = (NewRoot) => {
   );
 };
 
-renderApp(Game);
+renderApp(Jogo);
 
 if (module.hot) {
-  module.hot.accept('./components/Game', () => {
-    const Game = require('./components/Game').default;
-    renderApp(Game);
+  module.hot.accept('./components/Jogo', () => {
+    const Jogo = require('./components/Jogo').default;
+    renderApp(Jogo);
   });
 }
