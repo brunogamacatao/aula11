@@ -1,4 +1,8 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import * as actionCreators from '../actions/actionCreators';
 
 class Formulario extends React.Component {
     cadastrar(event) {
@@ -31,4 +35,14 @@ class Formulario extends React.Component {
     }
 }
 
-export default Formulario;
+function mapStateToProps(state) {
+  return {
+    produtos: state.produtos
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Formulario);

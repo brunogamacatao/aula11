@@ -1,17 +1,25 @@
 import React from 'react';
-
-import App from './App';
-
-import { Router, Route } from 'react-router';
+import { Router, Route, IndexRoute } from 'react-router';
 import { Provider } from 'react-redux';
-import produtosStore, { history } from '../stores/produtos';
+
+import store, { history } from '../stores/index';
+import ContainerAutenticado from './ContainerAutenticado';
+import Loja from './Loja';
+import Login from './Login';
+import Formulario from './Formulario';
 
 class Main extends React.Component {
     render() {
         return (
-            <Provider store={produtosStore}>
+            <Provider store={store}>
                 <Router history={history}>
-                <Route path="/" component={App}></Route>
+                    <Route path="/" component={Loja}>
+                        <Route path="login" component={Login}/>
+
+                        <Route component={ContainerAutenticado}>
+                            <IndexRoute component={Formulario}></IndexRoute>
+                        </Route>
+                    </Route>
                 </Router>
             </Provider>            
         );
