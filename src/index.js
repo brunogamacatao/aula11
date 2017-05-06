@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 import './css/aula11.css';
 
-import Loja from './components/Loja';
+import Main from './components/Main';
 
 const renderApp = (NewRoot) => {
   render(
@@ -17,11 +17,11 @@ const renderApp = (NewRoot) => {
   );
 };
 
-renderApp(Loja);
+renderApp(Main);
 
 if (module.hot) {
-  module.hot.accept('./components/Loja', () => {
-    const Loja = require('./components/Loja').default;
-    renderApp(Loja);
+  module.hot.accept('./components/Main', () => {
+    const Main = require('./components/Main').default;
+    renderApp(Main);
   });
 }
