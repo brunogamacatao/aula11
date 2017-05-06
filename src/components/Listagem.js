@@ -4,7 +4,7 @@ class Listagem extends React.Component {
   renderProduto(p) {
     return (
       <tr key={p.id}>
-        <td><img src={p.foto} alt="" width="50" height="50"/></td>
+        <td><img src={p.foto} alt="" width="50" height="50" /></td>
         <td>{p.nome}</td>
         <td>{p.preco}</td>
         <td>

@@ -8,9 +8,9 @@ import rootReducer from '../reducers/index';
 // create o estado padrão
 const defaultState = {
   produtos: [
-    {id: 0, nome: 'BACON FATIADO SEARA 250G', preco: 5.99, foto: 'http://www.paodeacucar.com/img/uploads/1/897/532897.png'},
-    {id: 1, nome: 'MARGARINA EXTRA CREMOSA COM SAL DORIANA POTE 250G', preco: 1.99, foto: 'http://www.paodeacucar.com/img/uploads/1/829/509829.jpg'},
-    {id: 2, nome: 'FONDUE SUÍÇO DE QUEIJO CLASSIC EMMI 400G', preco: 49.90, foto: 'http://www.paodeacucar.com/img/uploads/1/782/519782.jpg'}
+    { id: 0, nome: 'BACON FATIADO SEARA 250G', preco: 5.99, foto: 'http://www.paodeacucar.com/img/uploads/1/897/532897.png' },
+    { id: 1, nome: 'MARGARINA EXTRA CREMOSA COM SAL DORIANA POTE 250G', preco: 1.99, foto: 'http://www.paodeacucar.com/img/uploads/1/829/509829.jpg' },
+    { id: 2, nome: 'FONDUE SUÍÇO DE QUEIJO CLASSIC EMMI 400G', preco: 49.90, foto: 'http://www.paodeacucar.com/img/uploads/1/782/519782.jpg' }
   ],
   login: {
     loggedIn: false,

@@ -3,34 +3,23 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import * as actionCreators from '../actions/actionCreators';
+import { history } from '../stores/index';
 
 class Loja extends React.Component {
   componentDidUpdate(prevProps) {
-    const { dispatch, redirectUrl } = this.props;
-
     const isLoggingOut = prevProps.isLoggedIn && !this.props.isLoggedIn;
     const isLoggingIn = !prevProps.isLoggedIn && this.props.isLoggedIn;
 
     if (isLoggingIn) {
-      dispatch(this.navigateTo(redirectUrl));
+      history.push(this.props.redirectUrl);
     } else if (isLoggingOut) {
-      // Limpa tudo
+      this.props.setRedirectUrl('/');
+      history.replace('/login');
     }
   }
 
-  navigateToPage(url) {
-    console.log('OIOIOI - navigateToPage(' + url + ')');
-    this.context.router.push(url);
-  }  
-
   render() {
-    return (
-      <div>
-        <h1>Loja</h1>
-        <hr/>
-        {React.cloneElement(this.props.children, this.props)}
-      </div>
-    );
+    return React.cloneElement(this.props.children, this.props);
   }
 }
 
@@ -38,7 +27,7 @@ function mapStateToProps(state) {
   return {
     produtos: state.produtos,
     isLoggedIn: state.login.loggedIn,
-    redirectUrl: state.login.redirectUrl    
+    redirectUrl: state.login.redirectUrl
   };
 }
 

@@ -6,24 +6,24 @@ import store, { history } from '../stores/index';
 import ContainerAutenticado from './ContainerAutenticado';
 import Loja from './Loja';
 import Login from './Login';
-import Formulario from './Formulario';
+import AreaInterna from './AreaInterna';
 
 class Main extends React.Component {
-    render() {
-        return (
-            <Provider store={store}>
-                <Router history={history}>
-                    <Route path="/" component={Loja}>
-                        <Route path="login" component={Login}/>
+  render() {
+    return (
+      <Provider store={store}>
+        <Router history={history}>
+          <Route path="/" component={Loja}>
+            <Route path="login" component={Login} />
 
-                        <Route component={ContainerAutenticado}>
-                            <IndexRoute component={Formulario}></IndexRoute>
-                        </Route>
-                    </Route>
-                </Router>
-            </Provider>            
-        );
-    }
+            <Route component={ContainerAutenticado}>
+              <IndexRoute component={AreaInterna}></IndexRoute>
+            </Route>
+          </Route>
+        </Router>
+      </Provider>
+    );
+  }
 }
 
 export default Main;
